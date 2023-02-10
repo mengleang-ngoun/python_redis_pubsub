@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  message_queue:
+    image: redis:latest
+  service_a:
+    
