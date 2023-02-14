@@ -4,4 +4,34 @@ services:
   message_queue:
     image: redis:latest
   service_a:
-    
+    build: 
+      context: ./service_a
+      dockerfile: Dockerfile
+    volumes:
+      - ./service_a:/service
+    ports:
+      - 5001:5000
+  service_b:
+    build: 
+      context: ./service_b
+      dockerfile: Dockerfile
+    volumes:
+      - ./service_b:/service
+    ports:
+      - 5002:5000
+  service_c:
+    build: 
+      context: ./service_c
+      dockerfile: Dockerfile
+    volumes:
+      - ./service_c:/service
+    ports:
+      - 5003:5000
+  service_d:
+    build: 
+      context: ./service_d
+      dockerfile: Dockerfile
+    volumes:
+      - ./service_d:/service
+    ports:
+      - 5004:5000
